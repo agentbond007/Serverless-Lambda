@@ -1,0 +1,11 @@
+service: new-service
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: ${opt:stage, self:custom.defaultStage}
+  profile: ${self:custom.profiles.${self:provider.stage}}
+custom:
+  defaultStage: dev
+  profiles:
+    dev: devProfile
+    prod: prodProfile
