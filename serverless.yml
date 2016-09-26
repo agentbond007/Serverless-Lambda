@@ -47,8 +47,8 @@ provider:
 functions:
   hello:
     handler: handler.hello
-  events:
-    - http: GET greet  
+    events:
+      - http: GET greet  
 
 #    you can add any of the following events
 #    events:
@@ -61,11 +61,11 @@ functions:
 
 # you can add CloudFormation resource templates here
 #resources:
-#  Resources:
-#    NewResource:
-#      Type: AWS::S3::Bucket
-#      Properties:
-#        BucketName: my-new-bucket
+Resources:
+    ThumbnailsBucket:
+    Type: AWS::S3::Bucket
+      Properties:
+        BucketName: awesome-bucket
 #  Outputs:
 #     NewOutput:
 #       Description: "Description for the output"
